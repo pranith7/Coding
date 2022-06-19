@@ -6,15 +6,6 @@ void solve(vector<int> arr)
         
 }
 
-void display(vector<int> arr)
-{
-        cout<<"output of the array is"<<endl;
-        for(int i=0;i<arr.size()-1;i++)
-        {
-            cout<<arr[i]<<" ";
-        }
-}
-
 int main()
 {   
 
@@ -25,12 +16,15 @@ int main()
         int n;
         cin>>n;
         vector<int> arr(n);
-        for(int i=0;i<arr.size()-1;i++)
+        for(int i=0;i<=arr.size()-1;i++)
         {
             cin>>arr[i];
         }
         solve(arr);
-        display(arr);
+        for(int x : arr)
+        {
+            cout<<x<<" ";
+        }
     }
     
     return 0;

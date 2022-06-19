@@ -25,7 +25,7 @@ bool arePermutation(string A, string B)
         }
         for(int i=0;i<26;i++)
         {
-            if(freq1[A[i]-'a']!=freq2[B[i]-'a'])
+            if(freq1[i]!=freq2[i])
             {
                 return false;  
             } 

@@ -19,6 +19,8 @@ int binaryToDecimal(string s)
     }
     return count;
 }
+
+
  
 int main()
 {

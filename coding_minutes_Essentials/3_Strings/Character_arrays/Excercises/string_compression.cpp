@@ -2,29 +2,57 @@
 using namespace std;
 
 
-int compress(vector<char>& chars) {
+int compress(vector<char> &chars)
+ {
     // your code goes here
-    char count = 0;
-    vector<char> alpha;
+    int count_ = 1;
+    string alpha;
     for(int i=0;i<=chars.size()-1;i++)
     {   
-        if(chars[i]!=chars[i-1])
+        if(chars[i]!=chars[i+1])
         {
-            if(count!=0)
-            {
-              alpha.push_back(count);
-              count = 0;
+            if(count_!=1)
+            {   
+              alpha += to_string(count_);
+              alpha += (chars[i]);
+              count_ = 1;
             }
-            alpha.push_back(chars[i]);
             
         }
         else
         {
-            count++;
+            count_++;
         }
     }
     
     return alpha.size();
+    // int count_=1;
+    // string ans;
+	
+    // for(int i=0;i<chars.size();i++)
+    // {
+    //     while(i<chars.size()-1 && chars[i+1] == chars[i])
+    //     {
+    //         count_++;
+    //         i++;
+    //     }
+    //     ans += chars[i];
+    //     if(count_ == 1)
+    //     {
+    //         continue;
+    //     }
+    //     ans += to_string(count_);
+    //     count_ = 1;
+    // }
+    
+    //  chars.clear();
+    
+    //  for(int i=0;i<ans.size();i++)
+    //  {
+    //       chars.push_back(ans[i]);
+    //  } 
+ 
+    // return ans.size();
         
 }
 
@@ -38,14 +66,14 @@ int main()
         cin>>chars[i];
     }
     
-    char count;
-    count++;
-    chars.push_back(count);
-    cout<<"output of the chars"<<endl;
-    for(int i=0;i<=chars.size()-1;i++)
-    {
-        cout<<chars[i];
-    }
-    // cout<<compress(chars);
+    // char count;
+    // count++;
+    // chars.push_back(count);
+    // cout<<"output of the chars"<<endl;
+    // for(int i=0;i<=chars.size()-1;i++)
+    // {
+    //     cout<<chars[i];
+    // }
+    cout<<compress(chars);
     return 0;
 }
