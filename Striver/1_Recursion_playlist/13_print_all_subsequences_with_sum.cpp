@@ -11,7 +11,7 @@ void subsequence(int i,vector<int> &temp,int n,int arr[],int s,int sum)
 {
     if(i == n) 
     {   
-        if(s == sum)
+        if(s == sum) // check the condition
         {
             for(int j = 0;j < temp.size();j++)
             {

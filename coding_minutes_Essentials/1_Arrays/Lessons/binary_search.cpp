@@ -33,7 +33,7 @@ int main()
     {
         cin>>a[i];
     }
-    int x = binarysearch(a,k);
+    int  x =binarysearch(a,k);
     if(x!=-1) cout<<"Found";
     else cout<<"NOT";
     return 0;

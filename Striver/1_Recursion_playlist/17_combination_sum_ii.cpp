@@ -19,7 +19,7 @@ private:
     }
 public:
     vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
-        sort(candidates.begin(),candidates.end());
+        sort(candidates.begin(),candidates.end()); //O(nlog(n))
         vector<vector<int>> ans;
         vector<int> temp;
         findcombinations(0,candidates,target,ans,temp);

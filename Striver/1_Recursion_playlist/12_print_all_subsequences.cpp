@@ -9,7 +9,7 @@ which follows the order of the array or string
 */
 void subsequence(int i,vector<int> &temp,int n,int arr[])
 {
-    if(i == n) 
+    if(i == n)  // Base condition
     {
         for(int i = 0; i < temp.size(); i++)
             cout<<temp[i]<<" ";
