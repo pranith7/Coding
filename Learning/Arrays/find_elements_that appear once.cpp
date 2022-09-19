@@ -10,6 +10,21 @@ int getsingle (int arr[], int n)
     {
         twos = twos | (ones & arr[i]);
         ones = ones ^ arr[i];
-        common_bit_mask = 
+        common_bit_mask = ~ (ones & twos);
+        ones &= common_bit_mask;
+        twos &= common_bit_mask;
+
+    
     }
+
+    return ones;
+
+}
+
+int main ()
+{
+  int arr[] = { 5 ,4 ,3,2,2,1};
+  int n = sizeof(arr)/sizeof(arr[0]);
+  cout << "the element with single occurance is "
+       << getsingle(arr, n);
 }
