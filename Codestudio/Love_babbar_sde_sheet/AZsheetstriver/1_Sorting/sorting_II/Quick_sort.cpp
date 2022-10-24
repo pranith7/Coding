@@ -1,12 +1,45 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void Quick_sort(vector<int> &arr)
+
+
+ int partition (vector<int> &arr, int low, int high)
+    {
+        int pivot = arr[low]  ;
+        int i = low ;
+        int j = high ;
+
+        while (i < j) {
+
+            while (arr[i] <= pivot && i <= high - 1) {
+                i++  ;
+            }
+
+            while (arr[j] > pivot && j >= low) {
+                j-- ;
+            }
+
+            if (i < j)
+                swap(arr[i], arr[j])  ;
+        }
+
+        swap(arr[j], arr[low]) ;
+
+        return j ;
+}
+
+void QuickSort(vector<int> &arr,int low,int high)
 {
     int n = arr.size();
     
-}
+        if (low < high) {
 
+            int pivot = partition(arr, low, high) ;
+            QuickSort(arr, low, pivot - 1)  ;
+            QuickSort(arr, pivot + 1, high)  ;
+        }
+    
+}
 int main()
 {
     int n;
@@ -16,7 +49,7 @@ int main()
     {
         cin>>arr[i];
     }
-    Quick_sort(arr);
+    QuickSort(arr,0,n-1);
     cout<<"After Sorting of the array"<<endl;
     for(int i=0;i<n;i++)
     {
