@@ -8,7 +8,8 @@ using namespace std;
 int f(int n,vector<int> &heights,vector<int> &dp)
 {
     if(n == 0) return 0;
-    if(dp[n]!=-1) return dp[n];
+    if(dp[n]!=-1) return dp[n]; // checking if it exists or not 
+    
     int left = f(n - 1, heights,dp) + abs(heights[n] - heights[n - 1]);
     int right = INT_MAX;
     if(n>1) 
@@ -45,9 +46,6 @@ int frogJump_2(int n, vector<int> &heights)
 } 
 
 /* space optimisation*/
-
-#include <bits/stdc++.h> 
-
 int frogJump(int n, vector<int> &heights)
 {
     // Write your code here.

@@ -23,7 +23,7 @@ int findMin(vector<int>& nums) {
         right = mid - 1;
         }
     }
-        return nums[left]; 
+    return nums[left]; 
 }
 
 int main()
