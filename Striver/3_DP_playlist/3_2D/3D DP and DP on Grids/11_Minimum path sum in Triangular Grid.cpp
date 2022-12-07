@@ -2,13 +2,12 @@
 
 using namespace std;
 
-int minimumPathSumUtil(int i, int j, vector<vector<int> > &triangle,int n, 
-vector<vector<int> > &dp) {
+int minimumPathSumUtil(int i, int j, vector<vector<int> > &triangle,int n, vector<vector<int> > &dp) 
+{
   
-  if(dp[i][j]!=-1)
-  return dp[i][j];
+  if(dp[i][j]!=-1)  return dp[i][j]; // Checknig if it exists or not
   
-  if(i==n-1) return triangle[i][j];
+  if(i==n-1) return triangle[i][j]; //Base case
     
   int down = triangle[i][j]+minimumPathSumUtil(i+1,j,triangle,n,dp);
   int diagonal = triangle[i][j]+minimumPathSumUtil(i+1,j+1,triangle,n,dp);

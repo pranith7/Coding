@@ -19,7 +19,6 @@ public:
         }
         
         slow->next = slow->next->next;
-        
         return start->next;
     }
 };

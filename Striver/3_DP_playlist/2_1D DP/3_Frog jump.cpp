@@ -21,15 +21,15 @@ int f(int n,vector<int> &heights,vector<int> &dp)
        
 } 
 
-int frogJump(int n, vector<int> &heights)
+int frogJump(int n, vector<int> &heights) //Recursion + Memorisation
 {
     // Write your code here.
    vector<int> dp(n+1,-1);
    return f(n-1,heights,dp);
 }
 
-/* tabulation*/
-int frogJump_2(int n, vector<int> &heights)
+
+int frogJump_2(int n, vector<int> &heights) // Tabulation
 {
     // Write your code here.
    vector<int> dp(n,0);

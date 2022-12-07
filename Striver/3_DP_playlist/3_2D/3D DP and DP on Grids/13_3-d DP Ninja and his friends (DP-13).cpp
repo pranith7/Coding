@@ -2,8 +2,7 @@
 
 using namespace std;
 
-int maxChocoUtil(int i, int j1, int j2, int n, int m, vector < vector < int >> 
-& grid, vector < vector < vector < int >>> & dp) {
+int maxChocoUtil(int i, int j1, int j2, int n, int m, vector<vector<int>> &grid, vector<vector<vector<int>>> & dp) {
   if (j1 < 0 || j1 >= m || j2 < 0 || j2 >= m)
     return -1e9;
 
@@ -34,11 +33,11 @@ int maxChocoUtil(int i, int j1, int j2, int n, int m, vector < vector < int >>
 
 int maximumChocolates(int n, int m, vector < vector < int >> & grid) { //Recursion + Memorisation
 
-  vector < vector < vector < int >>> dp(n, vector < vector < int >> (m, vector < int
-  > (m, -1)));
-
+  vector<vector<vector<int>>> dp(n, vector<vector<int>>(m, vector<int>(m, -1)));
   return maxChocoUtil(0, 0, m - 1, n, m, grid, dp);
 }
+
+
 int maximumChocolates(int n, int m, vector < vector < int >> & grid) { //Tabulation
   // Write your code here.
   vector < vector < vector < int >>> dp(n, vector < vector < int >> (m, 

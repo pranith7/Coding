@@ -2,14 +2,11 @@
 
 using namespace std;
 
-int getMaxUtil(int i, int j, int m, vector<vector<int>> &matrix, 
-vector<vector<int> > &dp){
+int getMaxUtil(int i, int j, int m, vector<vector<int>> &matrix, vector<vector<int> > &dp){
     
     // Base Conditions
-    if(j<0 || j>=m)
-        return -1e9;
-    if(i==0)
-        return matrix[0][j];
+    if(j<0 || j>=m)   return -1e9;
+    if(i==0)  return matrix[0][j];
     
     if(dp[i][j]!=-1) return dp[i][j];
     

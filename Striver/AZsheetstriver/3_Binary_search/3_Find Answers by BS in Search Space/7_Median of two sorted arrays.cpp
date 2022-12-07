@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-float median(int num 1[],int num2[],int m,int n) {
+float median(int nums1[],int nums2[],int m,int n) {
     if(m>n)
         return median(nums2,nums1,n,m);//ensuring that binary search happens on minimum size array
         

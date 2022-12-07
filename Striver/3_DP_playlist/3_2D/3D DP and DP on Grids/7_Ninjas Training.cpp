@@ -3,9 +3,9 @@ using namespace std;
 
 int f(int day, int last, vector<vector<int>> &points,vector<vector<int>> &dp) {
 
-  if (dp[day][last] != -1) return dp[day][last];
+  if (dp[day][last] != -1) return dp[day][last]; //checking dp subarray
 
-  if (day == 0) {
+  if (day == 0) { //Base case
     int maxi = 0;
     for (int i = 0; i <= 2; i++) {
       if (i != last)

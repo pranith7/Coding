@@ -23,9 +23,9 @@ int uniquepaths(int m,int n) // Recursion + memorisation
 }
 
 
-int uniquepaths(int m,int n) // Tabulation 
+int uniquepaths(int m,int n,vector<int> &dp) // Tabulation 
 {   
-    int dp[m][n];
+    // int dp[m][n];
     for(int i=0;i<m;i++)
     {
         for(int j=0;j<n;j++)
@@ -69,7 +69,11 @@ int uniquepaths(int m,int n) // Space optimisation
 
     return prev[n-1];
 }
-
+int countWays(int m, int n){
+    vector<vector<int> > dp(m,vector<int>(n,-1));
+    return uniquepaths(m,n);
+    
+}
 int main()
 {
     int m,n;

@@ -6,7 +6,7 @@ int findMin(vector<int>& nums) {
     int minVal = INT_MAX;
 
     while (left <= right) {
-        if (nums[left] < nums[right]) {
+        if (nums[left] < nums[right]) { // condition
         minVal = min(minVal, nums[left]);
         break;
         }
