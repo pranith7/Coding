@@ -1,41 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
-string result(string s)
-{
-    int left = 0;
-    int right = s.length()-1;
-    
-    string temp="";
-    string ans="";
-    
-    //Iterate the string and keep on adding to form a word
-    //If empty space is encountered then add the current word to the result
-    while (left <= right) {
-        char ch= s[left];
-        if (ch != ' ') {
-            temp += ch;
-        } else if (ch == ' ') {
-            if (ans!="") ans = temp + " " + ans;
-            else ans = temp;
-            temp = "";
-        }
-        left++;
+
+class Solution {
+public:
+    string largestOddNumber(string num) {
+        for(int i = num.length() - 1; i >= 0; --i)
+		if(int(num[i]) % 2)
+			return num.substr(0, i + 1);
+
+	return "";
     }
-    
-    //If not empty string then add to the result(Last word is added)
-    if (temp!="") {
-        if (ans!="") ans = temp + " " + ans;
-        else ans = temp;
-    }
-    
-    return ans;    
-}
+};
+
 int main()
 {
-    string st="TUF is great for interview preparation";
-    cout<<"Before reversing words: "<<endl;
-    cout<<st<<endl;
-    cout<<"After reversing words: "<<endl;
-    cout<<result(st);
+    string num,res;
+    cin>>num;
+    Solution ob;
+    res = ob.largestOddNumber(num);
+    cout<<res;
+
     return 0;
 }
