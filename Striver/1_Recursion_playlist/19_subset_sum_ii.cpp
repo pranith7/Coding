@@ -1,3 +1,7 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
 private:
     void solve(int idx,vector<int> &nums,vector<int> &temp,vector<vector<int>> &ans)
     {

@@ -1,7 +1,8 @@
+#include<bits/stdc++.h>
+using namespace std;
    
-   
-    void solve(int idx,int total,vector<int> &arr,vector<int> &sumsubset)
-    {
+void solve(int idx,int total,vector<int> &arr,vector<int> &sumsubset){
+        
         if(idx == arr.size())
         {
             sumsubset.push_back(total);
