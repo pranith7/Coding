@@ -8,6 +8,7 @@ int minSumPathUtil(int i, int j,vector<vector<int>> &matrix,vector<vector<int>> 
     return matrix[0][0];
   if(i<0 || j<0)
     return 1e9;
+
   if(dp[i][j]!=-1) return dp[i][j];
     
   int up = matrix[i][j]+minSumPathUtil(i-1,j,matrix,dp);
@@ -43,7 +44,7 @@ int minSumPath(int n, int m, vector<vector<int> > &matrix){
         }
     }
     
-    return dp[n-1][m-1];
+return dp[n-1][m-1];
     
 }
 

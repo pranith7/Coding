@@ -28,7 +28,7 @@ int f(int day, int last, vector<vector<int>> &points,vector<vector<int>> &dp) {
 
 int ninjaTraining(int n, vector < vector < int > > & points) {  // Recursion + memorisation
 
-  vector < vector < int > > dp(n, vector < int > (4, -1));
+  vector<vector<int>> dp(n, vector<int> (4, -1));
   return f(n - 1, 3, points, dp);
 }
 
