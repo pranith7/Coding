@@ -1,0 +1,28 @@
+OOPS stands for "Object-Oriented Programming System" or "Object-Oriented Programming Structure." 
+It is a programming paradigm that is based on the concept of "objects," which can contain data 
+and code that operates on that data.
+
+In OOP, objects are created from "classes," which are templates or blueprints for creating 
+objects. Each object is an instance of a class and has its own set of attributes (data) and 
+behaviors (methods or functions).
+
+OOP is designed to allow developers to create and work with objects that model real-world entities,
+making it easier to design, test, and maintain complex software systems. Some of the key features 
+of OOP include encapsulation, inheritance, polymorphism, and abstraction.
+
+Encapsulation refers to the idea of bundling data and methods that operate on that data within 
+a single unit, or object. This allows developers to hide the implementation details of a class 
+from other parts of the code, making it easier to change the implementation without affecting 
+the rest of the code.
+
+Inheritance allows a subclass to inherit the attributes and methods of a superclass, making it 
+easier to create and maintain a hierarchy of classes.
+
+Polymorphism allows objects of different classes to be treated the same way, even if their 
+internal implementation is different. This is achieved through the use of interfaces and abstract classes.
+
+Abstraction refers to the process of exposing only the necessary information about an object 
+to the outside world, hiding the implementation details.
+
+
+
