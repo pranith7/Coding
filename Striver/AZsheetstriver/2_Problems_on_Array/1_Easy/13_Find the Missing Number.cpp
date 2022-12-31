@@ -23,24 +23,48 @@ int main()
 // } Driver Code Ends
 
 
-int missingNumber(int A[], int N)
-{
+int missingNumber(int A[], int N){
     // Your code goes here
+	/*
+		The missingNumber function takes an array of integers A and an integer N as input, and returns the 
+		missing number in the array A. The array is assumed to contain all the integers from 1 to N, 
+		inclusive, except for one missing number.
+
+		The function first initializes a variable ans to 0. This variable will be used to store the result 
+		of the XOR operations performed on the elements of the array.
+
+		The function then iterates through the elements of the array from index 0 to N-2, performing a bitwise XOR 
+		operation on each element and the current value of ans. This has the effect of canceling out all the elements 
+		of the array that appear an even number of times, leaving only the missing element.
+
+		The function then performs a similar operation on all the integers from 1 to N, inclusive, performing a 
+		bitwise XOR operation on each integer and the current value of ans. This has the effect of canceling out 
+		all the integers from 1 to N that appear an even number of times, leaving only the missing integer.
+
+		Finally, the function returns the value of ans, which is the missing integer in the array A.
+	*/
     int ans=0;
 
-    for(int i=0; i<N-1; i++){
-
+    for(int i=0; i<N-1; i++)
         ans=ans^A[i];
-
-    }
-
-    for (int i=1; i<=N;i++){
-
+		
+    for (int i=1; i<=N;i++)
         ans=ans^i;
-
-    }
-
     return ans;
+}
+//   if N <= arr[i] <= M
+int missingNumber(int A[], int N, int M) {
+  int ans = 0;
+
+  for (int i = 0; i < N - 1; i++) {
+    ans = ans ^ A[i];
+  }
+
+  for (int i = N; i <= M; i++) {
+    ans = ans ^ i;
+  }
+
+  return ans;
 }
 
 // vector < int >Solution::repeatedNumber (const vector < int >&arr) {

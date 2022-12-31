@@ -6,7 +6,7 @@ void merge(vector<int> &arr, int l, int mid, int r)
         int i = l ;        // starting index of left half of arr
         int j = mid + 1;   // starting index of right half of arr
         int f = l ;        // index used to transfer elements in temporary array
-        int temp[100000] ; // temporary array
+        int temp[r-l+1] ; // temporary array
 
         //storing elements in the temporary array in a sorted manner//
 
@@ -73,5 +73,6 @@ int main()
     {
         cout<<arr[i]<<" ";
     }
+    cout<<endl;
     return 0;
 }

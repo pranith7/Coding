@@ -13,6 +13,27 @@ class Solution{
     public:
     vector<int> leaders(int a[], int n){
         // Code here
+        /*
+            The leaders function is a member function of the Solution class that takes an array of integers 
+            called a and an integer n as input, and returns a vector of integers containing the leaders in 
+            the array a.
+
+            A leader in an array is an element that is greater than all the elements to its right.
+
+            The function first declares a vector of integers called v and an auxiliary array of integers called t, 
+            which will be used to store the maximum element to the right of each element in the array a.
+
+            It then initializes the variable max1 with the value of the last element in the array a, and 
+            enters a loop that iterates over the elements of a in reverse order, starting from the second 
+            to the last element. For each element a[i], it updates max1 with the maximum of max1 and a[i], 
+            and stores the value of max1 in the corresponding element of the array t.
+
+            The function then enters another loop that iterates over the elements of a from the first to the 
+            second to the last element. If the element a[i] is equal to the corresponding element of the array t, 
+            it pushes the value of a[i] onto the v vector.
+
+            Finally, the function pushes the value of the last element in the array a onto the v vector and returns it.
+        */
         vector <int> v;
         int t[n-1];
         int max1 = a[n-1];

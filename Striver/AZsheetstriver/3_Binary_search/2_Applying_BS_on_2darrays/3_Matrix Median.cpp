@@ -10,6 +10,24 @@ using namespace std;
 
 class Solution{   
 public:
+    /*
+        This is a class that defines a solution to the problem of finding the median of a matrix of integers.
+
+        The class has a single public method called median that takes in 3 parameters:
+
+        arr: a 2D vector of integers representing the matrix
+        n: an integer representing the number of rows in the matrix
+        m: an integer representing the number of columns in the matrix
+        The method returns an integer representing the median of the matrix.
+
+The method first initializes min and max to the minimum and maximum possible integer values respectively. It then iterates through the rows of the matrix and updates min and max to the minimum and maximum element in the matrix respectively.
+
+The method then calculates the desired index for the median by taking the average of (n * m + 1) / 2 and initializes a variable desired to this value.
+
+The method then enters a loop that continues until min is no longer less than max. In each iteration of the loop, the method calculates the middle index of the current range and finds the number of elements in the matrix that are less than or equal to this value. The method then compares the number of such elements to desired. If the number of elements is less than desired, the method updates min to the middle index plus one and continues to the next iteration. If the number of elements is greater than or equal to desired, the method updates max to the middle index and continues to the next iteration.
+
+When the loop ends, min will be the median of the matrix and the method returns this value.
+    */
     int median(vector<vector<int>> &arr, int n, int m){
         // code here
     int min = 100000000, max = -100000000; 

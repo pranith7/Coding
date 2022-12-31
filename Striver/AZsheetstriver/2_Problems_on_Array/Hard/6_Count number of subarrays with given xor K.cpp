@@ -40,6 +40,23 @@ int subsetXOR(int arr[], int n, int k)
 class Solution{
     public:
     int solve(vector<int> &A, int B) {
+    // count number of subarrays with given xor k
+    /*
+        The given code is a solution to a problem that asks to count the number of subarrays 
+        in a given array A with a given xor B.
+
+        The solution uses an unordered map visited to store the number of times a particular xor
+        value has been encountered so far. The variable cpx keeps track of the xor value of the 
+        elements from the start of the array up to the current index i. If cpx is equal to B, we 
+        increment the count c by 1, as this indicates that the xor of the elements from the start
+        of the array up to index i is equal to B.
+
+        We then check if the value h (which is equal to cpx xor B) is present in the visited map. 
+        If it is, we add the number of times h has been encountered to c. Finally, we increment 
+        the count of cpx in the visited map by 1.
+
+The function returns the total count c of subarrays with xor B at the end.
+    */
     unordered_map<int,int>visited;
     int cpx = 0;
     long long c=0;
