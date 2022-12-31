@@ -1,7 +1,34 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-float median(int num 1[],int num2[],int m,int n) {
+/*
+    The function begins by checking if m is greater than n. If it is, the function calls itself with the arrays 
+    and their lengths swapped. This is done to ensure that the binary search that follows is performed on the 
+    smaller of the two arrays, which will make the search more efficient.
+
+    The function then defines the variables low, high, and medianPos. low and high are used to specify the range 
+    of indices being searched in nums1, and medianPos is the position of the median in the combined array of nums1
+    and nums2.
+
+    The function then enters a loop that continues until low is less than or equal to high. In each iteration of
+    the loop, it calculates the midpoint between low and high and stores it in the variable cut1. It then 
+    calculates the corresponding index in nums2 using cut1 and medianPos, and stores it in the variable cut2.
+
+    The function then defines the variables l1, l2, r1, and r2, which represent the elements just before and after
+    the cuts in nums1 and nums2, respectively. If the cuts fall at the beginning or end of an array, the 
+    corresponding variables are initialized to the minimum or maximum values of int to ensure that they do not
+    affect the comparison that follows.
+
+    Next, the function checks if the elements just before the cuts are less than or equal to the elements just
+    after the cuts. If they are, the function has found the correct cuts and it proceeds to calculate and return
+    the median. If the elements just before the cuts are greater than the elements just after the cuts, the function
+    updates low or high and continues the loop.
+
+    If the combined length of the arrays is odd, the median is the maximum of the elements just before the cuts. 
+    If the combined length is even, the median is the average of the maximum of the elements just before the cuts
+     and the minimum of the elements just after the cuts.
+*/
+float median(int nums1[],int nums2[],int m,int n) {
     if(m>n)
         return median(nums2,nums1,n,m);//ensuring that binary search happens on minimum size array
         

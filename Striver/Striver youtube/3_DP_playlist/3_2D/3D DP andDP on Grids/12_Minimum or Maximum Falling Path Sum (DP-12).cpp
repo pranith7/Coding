@@ -1,7 +1,24 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
+
+/*
+    The function getMaxPathSum takes in a 2D vector of integers called matrix and returns an integer representing
+    the maximum sum of a path from the top of the matrix to the bottom. The function does this by using a 
+    recursive approach and storing previously calculated values in a 2D vector of integers called dp.
+
+    The function first initializes the variable n to be the number of rows in matrix and m to be the number of 
+    columns in matrix. It then initializes a 2D vector of integers called dp to be a vector of n rows and m columns, 
+    all initialized to -1.
+
+    The function then has a nested loop which iterates over each column j in the bottom row of matrix. For each 
+    iteration, the function calls the helper function getMaxUtil with the arguments n-1 (the index of the bottom row),
+    j (the current column), m (the number of columns in matrix), matrix, and dp. getMaxUtil returns the maximum path 
+    sum from the top of the matrix to the current cell at (n-1, j). The function stores the result of getMaxUtil in 
+    the variable ans and updates the maximum path sum by taking the maximum of ans and maxi.
+
+    The function getMaxUtil takes in four arguments: i and j which represent the current row and column in matrix, `m
+*/
 int getMaxUtil(int i, int j, int m, vector<vector<int>> &matrix, vector<vector<int> > &dp){
     
     // Base Conditions

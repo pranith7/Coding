@@ -1,6 +1,42 @@
 #include<bits/stdc++.h>
 using namespace std;
+/*
+      This function is a recursive implementation of a solution to a problem where you are given a 
+      2D grid of integers representing a staircase, and you can start from the top of the staircase 
+      and move down to the bottom either by jumping one step to the right or one step to the left at 
+      a time. The goal is to maximize the sum of the integers you collect along the way by choosing 
+      the optimal path.
 
+      The function takes in the following parameters:
+
+      i: an integer representing the current row index (starting from 0)
+      j1: an integer representing the current column index of the first step (starting from 0)
+      j2: an integer representing the current column index of the second step (starting from 0)
+      n: an integer representing the number of rows in the grid
+      m: an integer representing the number of columns in the grid
+      grid: a 2D vector of integers representing the staircase
+      dp: a 3D vector of integers representing the memory table for storing the results of previously computed subproblems
+      It returns an integer representing the maximum sum of integers that can be collected along the optimal path from the top to the bottom of the staircase.
+
+      The function first checks if the current column indices for the first and second steps are out of bounds. If either 
+      of them is, it returns a large negative integer (-1e9).
+
+      If the current row index (i) is the last row (n-1), it checks if the two steps are in the same column. 
+      If they are, it returns the value in that column. If they are not, it returns the sum of the values in 
+      both columns.
+
+      if the result of function maximumChocolates has not been calculated before, the function 
+      calls itself recursively with the updated indices i+1, j1+di, j2+dj. The function then returns
+      the maximum value of all these recursive calls, which represents the maximum number of chocolates that can
+      be collected from that particular position. This value is then stored in the dp array for future reference,
+      so that if the function is called again with the same indices, it can directly return the result from the dp 
+      array, rather than recalculating it through recursive calls. This technique is known as memorization and it 
+      helps to avoid recalculating the result for the same indices, thus improving the efficiency of the function. 
+      Once the function has reached the last row, it returns the maximum number of chocolates that can be collected 
+      from that position, which is the value of either the cell at grid[i][j1] or the sum of the values of the cells
+      at grid[i][j1] and grid[i][j2], depending on whether the indices j1 and j2 are equal or not.
+      
+*/
 int maxChocoUtil(int i, int j1, int j2, int n, int m, vector<vector<int>> &grid, vector<vector<vector<int>>> & dp) {
   if (j1 < 0 || j1 >= m || j2 < 0 || j2 >= m)
     return -1e9;

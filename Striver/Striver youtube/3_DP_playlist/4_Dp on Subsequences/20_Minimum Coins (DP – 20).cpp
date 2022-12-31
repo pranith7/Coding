@@ -1,6 +1,24 @@
 #include <bits/stdc++.h>
-
 using namespace std;
+
+/*
+    The minimumElements function is a recursive function that takes in a vector arr of integers, a target integer T,
+     and a dp array as input. It uses a recursive approach to find the minimum number of elements from the given array
+      that can sum up to the given target T.
+
+    The function has a base case where, if the index ind is equal to 0 (meaning the function has reached the first element of the array), 
+    it checks if the target T can be achieved by using only the first element. If T is divisible by the first element, it returns 
+    T divided by the first element. Otherwise, it returns a very large number to indicate that the target cannot be achieved using 
+    only the first element.
+
+    For other cases, the function checks if the element at the current index ind is less than or equal to the target T. If it is, 
+    it adds 1 to the recursive call that does not include the current element and uses the remaining target T - arr[ind]. If the element 
+    at the current index is not less than or equal to the target, it only makes the recursive call that does not include the current element. 
+    Finally, it returns the minimum of the two recursive calls, which is stored in the dp array at the index [ind][T] for future use.
+
+    The minimumElements function returns the value stored in the dp array at index [n-1][T], which is the minimum number of elements 
+    required to achieve
+*/
 
 int minimumElementsUtil(vector<int>& arr, int ind, int T, vector<vector<int>>& dp){
 

@@ -1,6 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+    The function findWays is a recursive function that uses dynamic programming to find the number of ways to sum up to 
+    a target number k using the elements in the array num. The function first checks if the target has already been reached,
+    in which case it returns 1. If the target has not been reached and there are no more elements left in the array, the 
+    function returns 0. If the target has not been reached and there are still elements left in the array, the function checks
+    if the current element arr[ind] can be included in the sum. If it can be included, the function recursively calls itself with 
+    the updated target as target-arr[ind]. If the current element cannot be included, the function simply recursively calls itself 
+    with the same target. The function uses a 2D dynamic programming array dp to store the intermediate results and avoid recalculating 
+    the same subproblems. The function returns the sum of the number of ways to include the current element and the number of ways to 
+    not include the current element.
+*/
 int findWaysUtil(int ind, int target, vector<int>& arr, vector<vector<int>> &dp){
     if(target==0)
         return 1;

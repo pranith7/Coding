@@ -1,7 +1,30 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
+
+/*
+    The given function is a recursive implementation to count the number of ways to make change for a given 
+    amount T using given denominations of coins. It uses a 2D array dp for memorization to store the intermediate 
+    results and avoid re-computation.
+
+    The function first checks if the base case has been reached i.e. if the current index ind is 0. If it is, 
+    it checks if the target amount T can be achieved using the given denomination arr[0]. 
+    If it can, it 
+                returns 1, 
+            else it 
+                returns 0.
+
+    If the base case has not been reached, the function checks if the value of dp[ind][T] has already been calculated and stored. 
+    If it has, it returns that value.
+
+    If the value of dp[ind][T] has not been calculated before, the function calculates it by considering two cases - one where the
+    current denomination arr[ind] is not taken and one where it is taken. In the first case, the function calls itself for ind-1 and T. 
+    In the second case, it calls itself for ind and T-arr[ind]. The number of ways to make change for the given amount in both cases is 
+    added and stored in dp[ind][T]. The function then returns dp[ind][T].
+
+    The function countWaysToMakeChange is the wrapper function that initializes the dp array and calls countWaysToMakeChangeUtil for 
+    the given values of arr, n, and T.
+*/
 long countWaysToMakeChangeUtil(vector<int>& arr,int ind, int T, vector<vector<long>>& dp){ 
 
     if(ind == 0){

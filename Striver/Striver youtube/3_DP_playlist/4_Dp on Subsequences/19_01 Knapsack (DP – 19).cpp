@@ -2,6 +2,26 @@
 using namespace std;
 
 
+/*
+    The knapsackUtil function is a recursive function that solves the knapsack problem using the top-down approach 
+    with memorization. The function takes four parameters:
+
+    wt: a vector of integers representing the weights of each item
+    val:a vector of integers representing the values of each item
+    ind:an integer representing the index of the current item
+    W:  an integer representing the maximum weight that the knapsack can hold
+    dp: a 2D vector of integers that is used for memorization. It stores the maximum value that 
+        can be obtained for a given index ind and maximum weight W.
+
+The function first checks if the ind is 0, which is the base case. If it is, it checks if the weight
+ of the first item is less than or equal to the maximum weight that the knapsack can hold. If it is,
+  it returns the value of the first item. Otherwise, it returns 0.
+
+If ind is not 0, the function checks if the value of dp[ind][W] is already calculated. If it is, 
+it returns the value of dp[ind][W]. Otherwise, it calculates the maximum value that can be obtained 
+by either not taking the current item or by taking the current item. It stores the maximum value in dp[ind][W] and returns it.
+
+*/
 int knapsackUtil(vector<int>& wt, vector<int>& val, int ind, int W, vector<vector<int>>& dp){
 
     if(ind == 0){

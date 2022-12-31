@@ -1,7 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+    The minSubsetSumDifference function is used to find the minimum difference between 
+    the sum of two subsets of a given array arr of size n. The function first calculates the 
+    total sum of all the elements in the array. It then initializes a 2D dynamic programming array 
+    dp of size n by totSum + 1 with all elements initialized to -1.
 
+    The function then loops through each value from 0 to totSum, calling the subsetSumUtil function 
+    for each value. The subsetSumUtil function is a recursive function that takes in 4 arguments:
+
+    ind: the index of the current element in the array
+    target: the target sum
+    arr: the input array
+    dp: the dynamic programming array
+
+    The subsetSumUtil function first checks if the target sum is 0, in which case it returns true. 
+    It then checks if the current index ind is 0, in which case it returns true if the first element 
+    in the array equals the target sum, and false otherwise. If the value of dp[ind][target] has already
+    been computed, it simply returns the value.
+
+    Otherwise, the function calculates two values: one where the current element is not taken, and
+    one where it is taken. The value where the current element is not taken is obtained by calling 
+    subsetSumUtil with the same target sum but with the current index decremented by 1. The value 
+    where the current element is taken is obtained by calling subsetSumUtil with the target sum decremented
+    by the value of the current element and with the current index decremented by 1, but only if the value
+    of the current element is less than or equal to the target sum. The function then returns the OR of 
+    these two values.
+
+    After the loop ends, the minSubsetSumDifference function loops through each value from 0 to totSum and 
+    checks if dp[n - 1][i] is true. If it is, the function calculates the difference between i and (totSum - i) 
+    and updates the minimum difference if this difference is smaller than the current minimum difference. Finally,
+    the function returns the minimum difference.
+*/
 bool subsetSumUtil(int ind, int target,vector<int> &arr, vector<vector<int>> &dp) {
   if (target == 0)
     return dp[ind][target]=true;

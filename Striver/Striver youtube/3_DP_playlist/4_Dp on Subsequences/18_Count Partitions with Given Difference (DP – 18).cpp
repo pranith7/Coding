@@ -1,6 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+    The function findWays is a function that takes in a vector of integers num and an integer k and
+    returns the number of ways to sum the elements of the vector num to get k.
+
+The function first declares and initializes a two-dimensional vector dp with n rows and k+1 columns 
+and fills it with -1. dp[i][j] represents the number of ways to sum the elements in num from index 0 to i to get j.
+
+The function then calls the helper function findWaysUtil which takes in four arguments: ind, target, arr, and dp. 
+ind represents the current index in the arr vector, target represents the target sum, arr is the input vector and
+ dp is the two-dimensional vector that stores the solutions to the subproblems.
+
+The function has two base cases:
+
+If ind is 0, then the function checks if target is 0 and arr[0] is 0 or if target is equal to arr[0]. 
+If either of these conditions is true, the function returns 1, otherwise it returns 0.
+If target is 0, the function returns 1.
+If the value of dp[ind][target] has already been calculated, the function returns that value.
+
+Otherwise, the function calculates the number of ways to get the target sum by not taking the element at index ind and 
+by taking the element at index ind. It stores the result in dp[ind][target] and returns it.
+*/
+
 int findWaysUtil(int ind, int target, vector<int>& arr, vector<vector<int>> &dp){
 
     if(ind == 0){

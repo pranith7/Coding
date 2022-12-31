@@ -1,4 +1,3 @@
-//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -13,41 +12,26 @@ struct Node
         next=NULL;
         prev=NULL;
     }
-        
 };
 
-Node *newNode(int data)
-{
-    Node *temp=new Node(data);
-    
+Node *newNode(int data){
+    Node *temp=new Node(data);    
     return temp;
 }
 
-
-
-
-void displayList(Node *head)
-{
+void displayList(Node *head){
     //Head to Tail
-    while(head->next)
-    {
+    while(head->next){
         cout<<head->data<<" ";
         head=head->next;
     }
-    cout<<head->data;
-    
-    
-    
+    cout<<head->data;    
 }
 
-
-int getLength(Node * head)
-{
+int getLength(Node * head){
     Node *temp=head;
-    
     int count=0;
-    while(temp->next!=head)
-    {
+    while(temp->next!=head){
         count++;
         temp=temp->next;
     }
@@ -57,21 +41,18 @@ int getLength(Node * head)
 
 
 
-bool verify(Node* head)
-{
+bool verify(Node* head){
     int fl=0;
     int bl=0;
     
     Node *temp=head;
     
-    while(temp->next)
-    {
+    while(temp->next){
         temp=temp->next;
         fl++;
     }
     
-    while(temp->prev)
-    {
+    while(temp->prev){
         temp=temp->prev;
         bl++;
     }

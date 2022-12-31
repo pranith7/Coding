@@ -1,6 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+/*
+    
+
+The function myAtoi is a string parsing function that converts a string representation of an integer 
+to an integer value. It handles several cases, such as leading whitespace characters, a leading plus 
+or minus sign, and integer overflow.
+
+The function first initializes a variable index to 0 and skips any leading whitespace characters by 
+incrementing index until it points to a non-whitespace character or the end of the string. It 
+then checks for a leading plus or minus sign and sets a boolean variable isNegative accordingly.
+
+Next, the function enters a loop that runs until it reaches the end of the string or encounters a 
+non-digit character. In each iteration, it converts the current character to an integer digit using 
+the expression s[index] - '0', adds this digit to the current integer value by multiplying the current
+ value by 10 and adding the digit, and increments index. It also checks for integer overflow by 
+ comparing the current value to INT_MAX / 10 and to INT_MAX / 10 with the current digit added. If either
+  condition is met, the function returns INT_MIN or INT_MAX depending on the value of isNegative.
+
+Finally, the function returns the integer value, negated if isNegative is true.
+*/
 class Solution {
 public:
   int myAtoi(string s) {

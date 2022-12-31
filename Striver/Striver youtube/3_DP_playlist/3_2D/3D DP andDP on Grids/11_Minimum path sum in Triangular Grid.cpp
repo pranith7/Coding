@@ -1,7 +1,27 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
+/*
+    In the above code, the minimumPathSum function is a recursive function that takes in a triangle 
+    represented as a 2D vector and the number of rows in the triangle as input. It returns the minimum
+    sum of the path from the top of the triangle to the bottom. The function makes use of another helper 
+    function, minimumPathSumUtil, which takes in the current row and column indices, the triangle, the number
+    of rows in the triangle, and a 2D dp array as input. The dp array is used to store the results of 
+    subproblems to avoid recalculating them.
+
+    The minimumPathSumUtil function first checks if the current subproblem has already been solved and 
+    stored in the dp array. If it has, it returns the stored value. If not, it checks if it has reached 
+    the last row of the triangle. If it has, it returns the value at the current cell in the triangle. 
+    Otherwise, it calculates the minimum path sum by recursively calling the function for the cell below 
+    and the cell below-right and returning the minimum of those two values. The result is then stored in 
+    the dp array and returned.
+
+    The minimumPathSum function then calls the minimumPathSumUtil function with the indices of the top cell 
+    of the triangle, the triangle, and the number of rows in the triangle as input, and returns the result. 
+    This allows the minimumPathSumUtil function to calculate the minimum path sum starting from the top of 
+    the triangle and working its way down to the bottom.
+    
+*/
 int minimumPathSumUtil(int i, int j, vector<vector<int> > &triangle,int n, vector<vector<int> > &dp) 
 {
   

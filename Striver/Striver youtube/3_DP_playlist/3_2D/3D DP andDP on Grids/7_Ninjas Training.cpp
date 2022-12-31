@@ -1,6 +1,37 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+    This is a function that uses recursion and memorization to find the maximum number of points that
+    can be obtained by a ninja in training.
+
+    The function takes in two arguments:
+
+    n: This is an integer representing the number of days of training.
+    points: This is a 2D vector of integers representing the number of points that can be obtained
+    for each activity on each day of training. The activities are represented by the indices of the 
+    inner vector (0 for meditation, 1 for running and 2 for fight).
+    The function has a helper function f which takes in four arguments:
+
+    day:    This is an integer representing the current day of training.
+    last:   This is an integer representing the activity that was done on the previous day.
+    points: This is a 2D vector of integers representing the number of points that can be
+            obtained for each activity on each day of training.
+    dp:     This is a 2D vector of integers representing the memorized values.
+
+    The function f has a base case where if the current day is zero (the first day of training), 
+    it returns the maximum number of points that can be obtained from the activities on the first 
+    day, excluding the activity that was done on the previous day (since the ninja cannot do the 
+    same activity two days in a row).
+
+    For all other days, the function f iterates through all the activities and finds the maximum
+    number of points that can be obtained by adding the number of points for the current activity
+    on the current day to the maximum number of points obtained from the previous day by doing a 
+    different activity. It then stores this maximum value in the dp array and returns it.
+
+    The main ninjaTraining function then calls the helper function f with the appropriate 
+    arguments and returns the result.
+*/
 int f(int day, int last, vector<vector<int>> &points,vector<vector<int>> &dp) {
 
   if (dp[day][last] != -1) return dp[day][last]; //checking dp subarray

@@ -1,8 +1,6 @@
-//{ Driver Code Starts
 #include <bits/stdc++.h>
-
 using namespace std;
-/* Link list Node */
+
 struct Node {
     int data;
     struct Node *next;
@@ -14,21 +12,6 @@ struct Node {
 
 struct Node *start = NULL;
 
-
-// } Driver Code Ends
-/*
- 
-  Node is defined as
-  struct Node {
-    int data;
-    struct Node *next;
-    Node(int x) {
-        data = x;
-        next = NULL;
-    }
-};
-
-*/
 class Solution
 {
     public:

@@ -1,7 +1,33 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+    The given code defines a function "uniquepaths" which takes in two integer arguments
+    "m" and "n" and returns an integer value. This function is used to find the total number
+    of unique paths from the top-left corner to the bottom-right corner of a grid with "m" rows and "n" columns.
 
+    The function first declares a 2D vector "dp" with "m" rows and "n" columns, initialized with -1. 
+    This vector is used to store the results of subproblems, to avoid recalculating them.
+
+    The function then calls another function "f", which takes in 3 arguments: an integer "i" 
+    representing the row number, an integer "j" representing the column number, and a reference to
+    the 2D vector "dp". This function returns the total number of unique paths from the top-left corner (0,0)
+    to the cell (i,j).
+
+    The function "f" has two base cases:
+
+    If "i" and "j" are both 0, it means we have reached the top-left corner, so the function returns 1.
+    If either "i" or "j" is negative, it means we have moved out of the grid, so the function returns 0.
+    If the result for the subproblem (i,j) is already present in the "dp" vector, the function returns that value. 
+    Otherwise, it calculates the number of unique paths to (i,j) by adding the number of paths from (i-1,j) and (i,j-1). 
+    It then stores this result in the "dp" vector and returns it.
+
+    Finally, the "uniquepaths" function returns the result of the function "f" called with the arguments (m-1,n-1) 
+    and the 2D vector "dp". This gives the total number of unique paths from the top-left corner (0,0) to the 
+    bottom-right corner (m-1,n-1) of the grid.
+
+
+*/
 int f(int i,int j,vector<vector<int>> &dp)
 {
     if(i==0 and j==0) return 1; //Base case
