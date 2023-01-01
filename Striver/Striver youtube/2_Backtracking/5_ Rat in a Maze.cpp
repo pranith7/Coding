@@ -1,14 +1,22 @@
-//{ Driver Code Starts
-// Initial template for C++
-
 #include <bits/stdc++.h>
 using namespace std;
 
-
-// } Driver Code Ends
-// User function template for C++
-
-
+/*
+    This code defines a class Solution with a member function findPath. The findPath function receives
+    a 2D integer array m and an integer n as input and returns a vector of strings. It has a helper 
+    function solve which is a recursive function that traverses the 2D array and generates a path as a
+    string of moves (UP, DOWN, LEFT, RIGHT) that can be taken to reach the bottom right corner of the 
+    array from the top left corner. The solve function takes in the current position (i, j), the input
+    array a, the size n, a reference to the vector of strings ans, a string move representing the path 
+    of moves taken so far, and a 2D vector of integers vis representing the visited positions. The base
+    case for the recursion is when the current position (i, j) is the bottom right corner of the array.
+    In this case, the path of moves is added to the ans vector. The solve function then considers four 
+    possible moves - down, left, right and up - in this order and invokes itself recursively for each 
+    of these moves if the new position is valid (inside the array boundaries and not already visited). 
+    
+    The findPath function initializes the vis array and invokes the solve function with the top left 
+    corner as the starting position.
+*/
 class Solution{
     public:
     void solve(int i,int j,vector<vector<int>> &a,int n,vector<string> &ans,string move,vector<vector<int>> &vis)
@@ -61,10 +69,6 @@ class Solution{
     }
 };
 
-    
-
-
-//{ Driver Code Starts.
 
 int main() {
     int t;

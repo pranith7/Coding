@@ -1,6 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+        This function computes the length of the longest common subsequence (LCS) of two strings s1 and s2. 
+        It does so by first initializing a two-dimensional dynamic programming (DP) table dp with n+1 rows 
+        and m+1 columns, where n is the length of s1 and m is the length of s2.
+
+        The function then iterates through each character in s1 and s2 and fills out the DP table by comparing each 
+        character and setting the value at the current index to the value at the index immediately above and to the 
+        left if the characters are equal, or to 0 if they are not equal. The function also keeps track of the maximum 
+        value in the table, which is the length of the LCS.
+
+        At the end, the function returns this maximum value, which is the length of the LCS.
+*/
+
 int lcs(string &s1, string &s2){
     
     int n = s1.size();

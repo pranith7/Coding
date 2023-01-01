@@ -1,6 +1,25 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+The function permute generates all permutations of the input array arr of size n. It does this by using 
+a frequency array freq to keep track of which elements have been used in the current permutation. The 
+function takes in a vector temp which stores the current permutation being generated, and a vector result
+which stores all the permutations generated so far.
+
+The function first checks if the size of temp is equal to n, in which case it means that all elements of
+arr have been used and the current permutation is complete. In this case, the current permutation is added
+to result and the function returns.
+
+If the size of temp is less than n, the function iterates through all the elements of arr and checks if the
+ element has already been used (by checking if freq[i] is 0). If the element has not been used, it 
+adds it to temp, sets freq[i] to 1 to mark it as used, and calls the function recursively. After the recursive call returns, it
+sets freq[i] back to 0 and removes the element from temp. This process is repeated until all permutations have been generated.
+
+The solve function simply initializes the frequency array and calls permute. It returns the result vector
+which contains all permutations of arr.
+*/
+
 void permute(int arr[], int n, int freq[],vector<int> &temp,vector<vector<int>> &result)
 {
     if(temp.size() == n) 

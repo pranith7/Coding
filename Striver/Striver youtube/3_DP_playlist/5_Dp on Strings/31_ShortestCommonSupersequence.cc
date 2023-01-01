@@ -1,6 +1,21 @@
 #include <bits/stdc++.h>
-
 using namespace std;
+
+/*
+    This function finds the shortest supersequence of two strings s1 and s2, which is a string that contains 
+    both s1 and s2 as subsequences. It does so by first initializing a two-dimensional dynamic programming (DP) 
+    table dp with n+1 rows and m+1 columns, where n is the length of s1 and m is the length of s2. The function
+     then sets the value of the first row and column of the table to 0.
+
+    The function then iterates through each character in s1 and s2 and fills out the DP table by comparing each
+    character and setting the value at the current index to the value at the index immediately above and to the
+    left if the characters are equal, or to 0 plus the maximum value of the cells directly above or to the left 
+    of it if the characters are not equal.
+
+    The function then backtracks through the DP table to find the shortest supersequence by appending either the
+    character from s1 or s2 to the ans string, depending on which cell has the larger value. Finally, the function
+    reverses the ans string and returns it.
+*/
 
 string shortestSupersequence(string s1, string s2){
 

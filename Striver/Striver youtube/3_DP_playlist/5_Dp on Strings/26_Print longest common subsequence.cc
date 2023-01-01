@@ -2,7 +2,16 @@
 using namespace std;
 
 /*
-    
+    This function computes the longest common subsequence (LCS) of two strings s1 and s2. It does so by 
+    first initializing a two-dimensional dynamic programming (DP) table dp with n+1 rows and m+1 columns, 
+    where n is the length of s1 and m is the length of s2.
+
+    The function then iterates through each character in s1 and s2 and fills out the DP table by comparing
+    each character and taking the maximum between the value at the current index and the maximum value of 
+    the cells directly above or to the left of it. The function then backtracks through the DP table to find
+    the actual LCS and stores it in the str string, which is then printed at the end.
+
+    The void keyword indicates that this function does not return a value.
 */
 void lcs(string s1, string s2) {
 

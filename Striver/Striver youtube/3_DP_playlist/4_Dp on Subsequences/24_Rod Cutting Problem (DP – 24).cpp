@@ -38,13 +38,13 @@ int cutRodUtil(vector<int>& price, int ind, int N, vector<vector<int>>& dp){
 }
 
 
-int cutRod(vector<int>& price,int N) {
+int cutRod(vector<int>& price,int N) { //Recursion + Memorisation
 
     vector<vector<int>> dp(N,vector<int>(N+1,-1));
     return cutRodUtil(price,N-1,N,dp);
 }
 
-int cutRod(vector<int>& price,int N) {
+int cutRod(vector<int>& price,int N) { //Tabulation
 
     vector<vector<int>> dp(N,vector<int>(N+1,-1));
     
@@ -89,7 +89,7 @@ int cutRod(vector<int>& price,int N) {
 // }
 
 
-int cutRod(vector<int>& price,int N) {
+int cutRod(vector<int>& price,int N) { //space optimisation
 
     vector<int> cur (N+1,0);
     

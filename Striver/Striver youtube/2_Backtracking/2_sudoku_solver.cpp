@@ -1,6 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+        This function tries to solve a Sudoku puzzle represented by a 2D vector board. The function uses
+        backtracking to find a solution.
+
+        The function first checks if the current cell is empty. If it is empty, it tries to fill the cell
+        with a character from '1' to '9'. For each character, it checks if it is a valid move by calling 
+        the isvalid function. If the move is valid, it fills the cell with the character and recursively 
+        calls itself on the next cell. If the recursive call returns true, it means the Sudoku puzzle has
+        been solved and the function returns true. If the recursive call returns false, it means the 
+        current character does not lead to a solution and the function tries the next character. If all
+        characters have been tried and none of them lead to a solution, the function returns false and 
+        backtracks to the previous cell. If the current cell is not empty, the function moves on to the
+        next cell. If all cells have been filled and the function has not returned false, it means the 
+        Sudoku puzzle has been solved and the function returns true.
+*/
+
 bool isvalid(vector<vector<char>> &board,int row,int col,char c)
 {
     for(int i=0;i<9;i++)

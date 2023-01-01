@@ -1,6 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+    This function checks if the string S1 matches the pattern in the string S2. It does so by using a 
+    combination of recursion and memoization.
+
+    The function first initializes a two-dimensional DP table dp with n rows and m columns, where n 
+    is the length of S1 and m is the length of S2. It then calls the helper function wildcardMatchingUtil, 
+    which uses recursion to fill out the DP table by comparing each character in S1 and S2 and returning
+    true or false depending on whether or not the characters match the pattern.
+
+    The function uses the following rules for matching:
+
+    If the characters are equal, or if S1[i] is a ?, then the characters match.
+    If S1[i] is a *, then the characters match if either the character immediately before S1[i] or 
+    the character immediately before S2[j] match the pattern.
+    If the characters are not equal and S1[i] is not a ? or *, then the characters do not match.
+    The function uses the isAllStars helper function to check if the remaining characters in S1 are all * characters. 
+    If they are, then the function returns true, otherwise it returns false.
+
+    The function uses the || operator
+*/
 bool isAllStars(string & S1, int i) {
   for (int j = 0; j <= i; j++) {
     if (S1[j] != '*')

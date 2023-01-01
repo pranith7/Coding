@@ -75,6 +75,33 @@ using namespace std;
 //     return ans;
 // }
 
+/*
+    This function is a recursive function that generates all possible solutions to the N-Queens problem, 
+    where N queens are placed on an NxN chessboard such that no two queens can attack each other. The 
+    function takes an integer n as input, which represents the size of the chessboard. 
+    
+    The function has four input vectors:
+
+    board:          a vector of strings representing the current state of the chessboard
+    ans:            a vector of vectors of strings representing all the solutions found so far
+    leftrow:        a vector of integers representing the state of each row on the chessboard 
+                    (1 if a queen is placed on that row, 0 otherwise)
+    lowdiagonal:    a vector of integers representing the state of each low diagonal on the 
+                    chessboard (1 if a queen is placed on that diagonal, 0 otherwise)
+    upperdiagonal:  a vector of integers representing the state of each upper diagonal on the chessboard 
+                    (1 if a queen is placed on that diagonal, 0 otherwise)
+
+
+    The function works by starting from the first column and trying to place a queen on each row of that column.
+    If a queen can be placed on a particular row without violating the constraints (no other queen on the 
+    same row, low diagonal, or upper diagonal), then the function places the queen on that row, updates 
+    the state of the corresponding row, low diagonal, and upper diagonal, and then recursively calls itself 
+    for the next column. If no queen can be placed on any row of the current column, the function returns 
+    without adding any solution to the ans vector. If the function has placed queens on all the columns 
+    (base case), it adds the current state of the board to the ans vector as a solution. The function then 
+    backtracks, removes the queen placed on the current column, and updates the state of the corresponding row,
+    low diagonal, and upper diagonal before returning. This process is repeated until all solutions have been found.
+*/
 
 void solve(int col,vector<string> &board,vector<vector<string>> &ans,vector<int> &leftrow,
 vector<int> &lowdiagonal,vector<int> &upperdiagonal,int n)

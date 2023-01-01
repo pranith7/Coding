@@ -1,6 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+    This function computes the number of ways that the string s can be obtained as a subsequence of the string t. 
+    It does so by using a combination of recursion and memoization.
+
+    The function first initializes a two-dimensional DP table dp with lt rows and ls columns. It then calls the 
+    helper function countUtil, which uses recursion to fill out the DP table by comparing each character in t 
+    and s and setting the value at the current index to the sum of the values at the indices immediately above
+    and to the left if the characters are equal, or to the value at the index immediately above if the characters
+    are not equal. The function then returns the value at the bottom-right cell of the DP table, which is the number
+    of ways that s can be obtained as a subsequence of t.
+
+    The prime variable is used to take the modulo of the result to avoid integer overflow. The % operator computes
+    the remainder of the division of the number on its left by the number on its right. In this case, prime is set
+    to a large prime number, so taking the modulo of the result with prime will not affect the result in any 
+    significant way, but it will prevent integer overflow.
+*/
 int prime = 1e9+7;
 
 int countUtil(string s1, string s2, int ind1, int ind2,vector<vector<int>>& dp){

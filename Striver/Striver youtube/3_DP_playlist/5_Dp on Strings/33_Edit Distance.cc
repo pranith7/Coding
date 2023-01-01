@@ -1,6 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+    This function computes the minimum number of operations required to transform the string S1 
+    into the string S2. It does so by using a combination of recursion and memoization.
+
+    The function first initializes a two-dimensional DP table dp with n rows and m columns, 
+    where n is the length of S1 and m is the length of S2. It then calls the helper function 
+    editDistanceUtil, which uses recursion to fill out the DP table by comparing each character
+    in S1 and S2 and setting the value at the current index to the minimum of the values at the
+    indices immediately above and to the left and the value at the index immediately above if the
+    characters are not equal, or to 0 if the characters are equal. The function then returns the 
+    value at the bottom-right cell of the DP table, which is the minimum number of operations 
+    required to transform S1 into S2.
+
+    The three operations that can be performed are:
+
+    Insert a character into S1
+    Delete a character from S1
+    Replace a character in S1 with a different character
+
+    The function uses the min function to find the minimum of three values. The min function returns
+    the smaller of the two values passed to it as arguments.
+*/
+
 int editDistanceUtil(string& S1, string& S2, int i, int j, vector<vector<int>>& dp){
     
     if(i<0)
