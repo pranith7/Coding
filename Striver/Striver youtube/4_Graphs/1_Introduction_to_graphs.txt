@@ -1,0 +1,40 @@
+A graph is a non-linear data structure that represents a collection of interconnected objects. It is used to represent relationships
+between different objects, and it is a very useful tool for modeling and solving many problems in computer science, engineering, and other fields.
+
+In graph theory, a graph is represented as a set of vertices (also known as nodes) connected by edges. The vertices represent the objects,
+and the edges represent the relationships between the objects. A graph can be either directed or undirected. In a directed graph, the 
+edges have a direction and are called arcs, while in an undirected graph, the edges do not have a direction and are called edges.
+
+There are many different types of graphs, including simple graphs, weighted graphs, and connected graphs. A simple graph is a graph
+with no self-loops (edges that connect a vertex to itself) and no parallel edges (two or more edges that connect the same pair of vertices). 
+A weighted graph is a graph where each edge has a weight or cost associated with it, and a connected graph is a graph where there is a path 
+between every pair of vertices.
+
+Graphs are used to represent a wide range of real-world problems and systems, including social networks, transportation networks, communication
+networks, and more. They are also used in computer science and algorithms, such as in graph traversal algorithms and graph search algorithms,
+which are used to find paths between vertices in a graph.
+
+There are many different ways to represent a graph in computer memory, including adjacency lists, adjacency matrices, and incidence matrices.
+Adjacency lists represent a graph as a list of all the vertices, and each vertex is associated with a list of its neighboring vertices. 
+Adjacency matrices represent a graph as a two-dimensional matrix, with rows and columns representing the vertices, and the cells representing
+the edges. Incidence matrices represent a graph as a matrix with rows representing the vertices and columns representing the edges, and the
+cells indicating whether a vertex is incident (connected) to an edge.
+
+Overall, graphs are a powerful and versatile tool for representing and solving many types of problems, and they are an important topic in 
+computer science and data structures and algorithms.
+
+
+In a graph, the edges represent the relationships between the vertices (or nodes). An edge can either be directed or undirected.
+
+In an undirected graph, the edges do not have a direction and can be traversed in either direction. This means that if there is an edge 
+connecting vertex A to vertex B, then there is also an edge connecting vertex B to vertex A. Undirected graphs are often used to represent
+symmetrical relationships, such as friendships between people or connections between devices in a network.
+
+In a directed graph, also known as a digraph, the edges have a direction and can only be traversed in one direction. This means that 
+if there is an edge connecting vertex A to vertex B, it does not necessarily mean that there is an edge connecting vertex B to vertex A. 
+Directed graphs are often used to represent asymmetrical relationships, such as following relationships on social media or the flow of 
+data in a computer network.
+
+It is important to note that a graph can be either directed or undirected, and it is up to the designer of the graph to decide which 
+type of graph is most appropriate for the problem at hand.
+
