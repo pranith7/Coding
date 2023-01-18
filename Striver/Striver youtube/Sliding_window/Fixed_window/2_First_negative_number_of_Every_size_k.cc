@@ -1,4 +1,4 @@
-#include<bits/stdc+.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 vector<int> first_negative_number_of_every_size_k(vector<int>&arr, int k)
