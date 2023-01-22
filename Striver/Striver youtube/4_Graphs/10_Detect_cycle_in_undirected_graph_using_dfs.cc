@@ -38,6 +38,42 @@ bool isCyclic() {
             return true;
     return false;
 }
+/*  optimised version*/
+/*
+    The main change here is that we pass the parent vertex as an argument to the
+    dfs function, and check if the current vertex is equal to the parent before 
+    determining if it is a cycle. This eliminates the need to maintain a recursion stack and improves the time complexity.
+    Also, you can use bitset instead of bool array of size N to decrease memory usage.
+    Also, you can use std::unordered_map instead of vector<int> g[N] to decrease the memory usage.
+*/
+const int N = 100000;
+vector<int> g[N];
+bool vis[N];
+
+bool dfs(int v, int parent) {
+    vis[v] = true;
+
+    for (int i = 0; i < g[v].size(); i++) {
+        int u = g[v][i];
+        if (!vis[u]) {
+            if (dfs(u, v)) return true;
+        } else if (u != parent) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool isCyclic() {
+    for (int i = 0; i < N; i++) {
+        vis[i] = false;
+    }
+    for (int i = 0; i < N; i++)
+        if (!vis[i] && dfs(i, -1))
+            return true;
+    return false;
+}
 
 int main() {
     // Add edges to the graph
